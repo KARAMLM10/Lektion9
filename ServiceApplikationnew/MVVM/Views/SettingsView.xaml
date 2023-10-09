@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="ServiceApplikationnew.MVVM.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ServiceApplikationnew.MVVM.Views"
+             xmlns:viewmodels="clr-namespace:ServiceApplikationnew.MVVM.ViewModels"
+             d:DataContext="{d:DesignInstance Type=viewmodels:SettingsViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="680" d:DesignWidth="1280">
+    <Grid>
+        <Rectangle Fill="#000000" Opacity="0.88"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Navigationbar section-->
+            <Grid Grid.Column="0">
+                <Rectangle Fill="#000000"/>
+                <StackPanel VerticalAlignment="Bottom">
+                    <Button Style="{StaticResource MenuButton}" 
+                            Content="&#x2b;"/>
+                    <Button Style="{StaticResource MenuButton}"
+                            Content="&#xf03a;"/>
+                    <Button Style="{StaticResource MenuButton}"
+                            Content="&#xf013;"/>
+                    <Button Style="{StaticResource MenuButton}"
+                            Content="&#xf011;" 
+                            Command="{Binding CloseApplikationCommand}"/>
+                </StackPanel>
+
+            </Grid>
+            <!--Content section-->
+            <Grid Grid.Column="1" Margin="40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--Header section-->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--Headling section-->
+                    <TextBlock Grid.Column="0" Text="{Binding Title, FallbackValue=Settings}" Foreground="#cccccc" FontSize="22"/>
+                    <!--Cancel button section-->
+                    <Button Grid.Column="1" Command="{Binding NavigatToHomeCommand}" Style="{StaticResource CancelButton}"/>
+
+
+
+                </Grid>
+            </Grid>
+
+        </Grid>
+       
+    </Grid>
+</UserControl>

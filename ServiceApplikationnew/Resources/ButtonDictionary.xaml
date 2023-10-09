@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <Style x:Key="SettingsButton" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#cccccc"/>
+        <Setter Property="FontFamily" Value="{StaticResource FontAwesome-Regular}"/>
+        <Setter Property="FontSize" Value="48"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Content" Value="&#xf1de;"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <TextBlock Foreground="{TemplateBinding Foreground}">
+                        <ContentPresenter Content="{TemplateBinding Content}" />
+                    </TextBlock>
+
+
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Foreground" Value="#ffffff"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+
+    <!--Canel button-->
+    <Style x:Key="CancelButton" TargetType="Button" BasedOn="{StaticResource SettingsButton}">
+        <Setter Property="Content" Value="&#xf00d;"/>
+    </Style>
+
+    <Style x:Key="MenuButton" TargetType="Button" BasedOn="{StaticResource SettingsButton}">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#cccccc"/>
+        <Setter Property="FontFamily" Value="{StaticResource FontAwesome-Regular}"/>
+        <Setter Property="FontSize" Value="40"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="20 10 20 10"/>
+        <Setter Property="Content" Value="&#xf00d;"/>
+    </Style>
+
+</ResourceDictionary>
