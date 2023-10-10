@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="./Resources/ViewModelDataTemplateDictionary.xaml"/>
                 <ResourceDictionary Source="./Resources/FontDictionary.xaml"/>
                 <ResourceDictionary Source="./Resources/ButtonDictionary.xaml"/>
+                <ResourceDictionary Source="./Resources/DeviceTileDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
