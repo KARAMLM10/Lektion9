@@ -1,5 +1,6 @@
 ﻿
 using ServiceApplikationnew.MVVM.Core;
+using ServiceApplikationnew.Services;
 using System.Windows;
 
 namespace ServiceApplikationnew;
@@ -12,6 +13,8 @@ public partial class MainWindow : Window
     public MainWindow(NavigationStore navigationStore)
     {
         InitializeComponent();
+       
         DataContext = navigationStore;
     }
+
 }
