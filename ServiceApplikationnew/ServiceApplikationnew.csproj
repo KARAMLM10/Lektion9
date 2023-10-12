@@ -64,6 +64,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IotShared\IotShared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="Resources\FontDictionary.xaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Page>

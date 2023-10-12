@@ -1,6 +1,8 @@
 ﻿
 using ServiceApplikationnew.MVVM.Core;
+using ServiceApplikationnew.MVVM.Models;
 using ServiceApplikationnew.Services;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -11,7 +13,6 @@ public class HomeViewModel : ObservalbeObject
     private readonly NavigationStore _navigationstore;
     private readonly DateTimeService _dateTimeService;
 
-
     public HomeViewModel(NavigationStore navigationStore, DateTimeService dateTimeService)
     {
         _navigationstore = navigationStore;
@@ -19,7 +20,7 @@ public class HomeViewModel : ObservalbeObject
         GetDateTimeAsync();
     }
 
-
+    
     // Navigation 
     public ICommand NavigatToSettingsCommand =>
         new RelayCommand(() => _navigationstore.CurrentViewModel = new SettingsViewModel(_navigationstore, _dateTimeService ));

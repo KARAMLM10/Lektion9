@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceApplikationnew", "ServiceApplikationnew\ServiceApplikationnew.csproj", "{6F431C24-EA6D-4064-99D6-15A6D123F9E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceApplikationnew", "ServiceApplikationnew\ServiceApplikationnew.csproj", "{6F431C24-EA6D-4064-99D6-15A6D123F9E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IotShared", "IotShared\IotShared.csproj", "{8D455C7C-F20B-45D6-9FC3-84D8D66C356B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6F431C24-EA6D-4064-99D6-15A6D123F9E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F431C24-EA6D-4064-99D6-15A6D123F9E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F431C24-EA6D-4064-99D6-15A6D123F9E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D455C7C-F20B-45D6-9FC3-84D8D66C356B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D455C7C-F20B-45D6-9FC3-84D8D66C356B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D455C7C-F20B-45D6-9FC3-84D8D66C356B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D455C7C-F20B-45D6-9FC3-84D8D66C356B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

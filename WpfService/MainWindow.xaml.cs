@@ -1,11 +1,5 @@
-﻿using IotShared.Models;
-using IotShared.Services;
-using Microsoft.Azure.Devices.Shared;
-using ServiceApplikationnew.MVVM.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,20 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ServiceApplikationnew.MVVM.Views
+namespace WpfService
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class MainWindow : Window
     {
-       
-        public HomeView()
+        public MainWindow()
         {
             InitializeComponent();
-           
-
         }
-
     }
 }

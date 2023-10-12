@@ -10,7 +10,10 @@
         Title="ServiceApplikationnew" Height="720" Width="1280">
     <Grid>
         <Image Source="Assets/Images/BG.jpg" Stretch="Fill"/>
-        
+            
         <ContentControl Content="{Binding CurrentViewModel}"/>
+        
+        
+        
     </Grid>
 </Window>
