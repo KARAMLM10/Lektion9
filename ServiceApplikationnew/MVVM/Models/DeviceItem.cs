@@ -16,6 +16,7 @@ public class DeviceItem
         {
             "lampa" => "\uf0eb",
             "fan" => "\ue004",
+            "music" => "\uf001",
             _ => "\uf2db"
         };
     }
