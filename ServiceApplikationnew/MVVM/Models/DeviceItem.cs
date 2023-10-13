@@ -7,6 +7,7 @@ public class DeviceItem
     public string? DeviceId { get; set; }
     public string? Devicetype { get; set; }
     public string? Placement { get; set; }
+    public string? DeviceName { get; set; }
     public bool IsActive { get; set; }
     public string? Icon => SetIcon();
 

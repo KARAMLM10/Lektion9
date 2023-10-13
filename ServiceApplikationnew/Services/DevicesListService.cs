@@ -52,12 +52,14 @@ public class DevicesListService
                         var isActiveItem = device.Properties.Desired.Contains("isActive") ? device.Properties.Desired["isActive"].ToString() : "false";
                         bool.TryParse(isActiveItem, out bool isActive);
                         var deviceType = device.Properties.Desired.Contains("deviceType") ? device.Properties.Desired["deviceType"] : "unknown";
+                              var placement = device.Properties.Desired.Contains("placement") ? device.Properties.Desired["placement"] : "unknown";
                         DeviceItemList.Add(
                             new DeviceItem
                             {
                                 DeviceId = device.DeviceId,
                                 IsActive = isActive,
-                                Devicetype = deviceType
+                                Devicetype = deviceType,
+                                Placement  = placement
                             });
                     }
 

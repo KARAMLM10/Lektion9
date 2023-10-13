@@ -1,6 +1,7 @@
 ﻿
 using IotShared.Models;
 using Microsoft.Azure.Devices.Client;
+using Microsoft.Azure.Devices.Shared;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Text;
@@ -67,6 +68,11 @@ public class DeviceManager
         return false;
     }
 
+    public async Task UpdateReportedPropertiesAsync(TwinCollection twinCollection)
+    {
+        if (twinCollection != null)
+            await _deviceclient.UpdateReportedPropertiesAsync(twinCollection);
+    }
 
 
 }
