@@ -49,7 +49,7 @@
                     <!--Headling section-->
                     <TextBlock Grid.Column="0" Text="{Binding Title, FallbackValue=Settings}" Foreground="#cccccc" FontSize="22"/>
                     <!--Cancel button section-->
-                    <Button Grid.Column="1" Command="{Binding NavigatToHomeCommand}" Style="{StaticResource CancelButton}"/>
+                    <Button Grid.Column="1" Command="{Binding NavigateToHomeCommand}" Style="{StaticResource CancelButton}"/>
 
 
 

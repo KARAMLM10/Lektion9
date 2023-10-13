@@ -1,16 +1,15 @@
 ﻿
+using CommunityToolkit.Mvvm.ComponentModel;
+
 namespace ServiceApplikationnew.MVVM.Core;
 
-public class NavigationStore : ObservalbeObject
+public partial class NavigationStore : ObservableObject
 {
-    private ObservalbeObject? _currentViewModel;
-    public ObservalbeObject? CurrentViewModel 
-    { 
-        get => _currentViewModel;
-        set => SetValue(ref _currentViewModel, value); 
-    }
+    [ObservableProperty]
+    private ObservableObject? currentViewModel;
 
-    public void NavigateTo(ObservalbeObject? viewModel) 
+
+    public void NavigateTo(ObservableObject? viewModel) 
     {
         CurrentViewModel = viewModel;
 

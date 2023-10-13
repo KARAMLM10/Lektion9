@@ -10,6 +10,7 @@
                 <ResourceDictionary Source="./Resources/FontDictionary.xaml"/>
                 <ResourceDictionary Source="./Resources/ButtonDictionary.xaml"/>
                 <ResourceDictionary Source="./Resources/DeviceTileDictionary.xaml"/>
+                <ResourceDictionary Source="./Resources/DevicesListControler.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

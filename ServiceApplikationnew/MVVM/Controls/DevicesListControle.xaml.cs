@@ -1,8 +1,6 @@
 ﻿using IotShared.Models;
 using IotShared.Services;
 using Microsoft.Azure.Devices.Shared;
-using ServiceApplikationnew.MVVM.Models;
-using ServiceApplikationnew.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,18 +18,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ServiceApplikationnew.MVVM.Views
+namespace ServiceApplikationnew.MVVM.Controls
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for DevicesListControle.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class DevicesListControle : UserControl
     {
-
-        public HomeView()
+        
+        public DevicesListControle()
         {
             InitializeComponent();
         }
-
     }
 }

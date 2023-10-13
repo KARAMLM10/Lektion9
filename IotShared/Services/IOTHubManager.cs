@@ -10,7 +10,7 @@ namespace IotShared.Services;
 
 public class IOTHubManager
 {
-    private string _iotHubConnectionString;
+    private string _iotHubConnectionString = string.Empty;
     private RegistryManager _registryManager;
     private ServiceClient _serviceClient;
     private EventHubConsumerClient _consumerclient;
@@ -43,7 +43,7 @@ public class IOTHubManager
         }
         catch (Exception ex)
         { Debug.WriteLine(ex.Message); }
-        return null;
+        return null!;
     }
 
 
@@ -63,7 +63,7 @@ public class IOTHubManager
         {
             Debug.WriteLine(ex.Message);
         }
-        return null;
+        return null!;
     }
 
 
@@ -82,7 +82,7 @@ public class IOTHubManager
         {
             Debug.WriteLine(ex.Message);
         }
-        return null;
+        return null!;
     }
 
 }

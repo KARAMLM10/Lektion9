@@ -7,7 +7,7 @@
              xmlns:viewmodels="clr-namespace:ServiceApplikationnew.MVVM.ViewModels"
              xmlns:controls="clr-namespace:ServiceApplikationnew.MVVM.Controls"
              xmlns:models="clr-namespace:ServiceApplikationnew.MVVM.Models"
-             d:DataContext="{d:DesignInstance Type=viewmodels:HomeViewModel}"
+             d:DataContext="{d:DesignInstance Type=viewmodels:HomeWindowViewModel}"
              mc:Ignorable="d" 
              Height="720" Width="1280">
     <Grid>
@@ -41,17 +41,65 @@
                 </StackPanel>
                 
                 <!--Settings button section-->
-                <Button Grid.Column="2" Command="{Binding NavigatToSettingsCommand}" Style="{StaticResource SettingsButton}" Margin="350 0 0 0"/>
+                <Button Grid.Column="2" Command="{Binding NavigateToSettingsCommand}" Style="{StaticResource SettingsButton}" Margin="350 0 0 0"/>
 
 
 
             </Grid>
-            <!--DeviceItem Section-->
-            <Grid Grid.Row="1">
-               <controls:DeviceTileControle />
+                <!--DeviceItem Section-->
+                <!--<controls:DeviceTileControle/>-->
+            <!--<Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
+                <StackPanel Grid.Row="0" Margin="50 10 50 10" >
+                </StackPanel>
+                <ListView Grid.Row="1" x:Name="DeviceListView" ItemsSource="{Binding DeviceTwinList}" HorizontalContentAlignment="Stretch">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding DeviceId}" VerticalAlignment="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
+            </Grid>-->
+            <Grid Grid.Row="2" Margin="0 40 0 0">
+                <ItemsControl Grid.Row="1" ItemsSource="{Binding DeviceItemList}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource DeviceTile}">
+                                <Button.Content>
+                                    <Grid>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding DeviceId}" VerticalAlignment="Center" />
+                                            <TextBlock Text="{Binding Icon, FallbackValue=&#xf2db;}" FontFamily="{StaticResource FontAwesome-Regular}" FontSize="80" Foreground="#ffffff" Margin="0 0 0 20" />
+                                            <TextBlock Text="{Binding Placement, FallbackValue=Unkown}" HorizontalAlignment="Center" Foreground="#cccccc" />
+                                        </StackPanel>
+                                    </Grid>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </Grid>
+
+
+
+
+
         </Grid>
         
         

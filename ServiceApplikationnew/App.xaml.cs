@@ -6,6 +6,9 @@ using ServiceApplikationnew.MVVM.ViewModels;
 using ServiceApplikationnew.Services;
 using System.Windows;
 using System;
+using IotShared.Models;
+using IotShared.Services;
+using ServiceApplikationnew.MVVM.Views;
 
 namespace ServiceApplikationnew;
 
@@ -23,9 +26,25 @@ public partial class App : Application
             {
                 services.AddSingleton<NavigationStore>();
                 services.AddSingleton<DateTimeService>();
+                services.AddSingleton<DevicesListService>();
+                services.AddSingleton(new IOTHubManager(new IotHubManagerOptions
+                {
+                    iothubConnectionString = "HostName=Systemutvecklingkaram.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=b1VBnvT3K4uet/1VkdBsuelGyxh6eodhEAIoTJKGAtA=",
+                    eventHubEndpoint = "Endpoint=sb://ihsuprodamres076dednamespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=b1VBnvT3K4uet/1VkdBsuelGyxh6eodhEAIoTJKGAtA=;EntityPath=iothub-ehub-systemutve-25230371-5c032015c0",
+                    eventHubName = "iothub-ehub-systemutve-25230371-5c032015c0",
+                    consumerGroup = "ServiceApplikationnew"
+                }));
+
+
                 services.AddSingleton<MainWindow>();
-                services.AddSingleton<HomeViewModel>();
-                services.AddSingleton<SettingsViewModel>(); 
+
+                services.AddSingleton<HomeWindowViewModel>();
+                services.AddSingleton<HomeView>();
+
+                services.AddSingleton<SettingsViewModel>();
+                services.AddSingleton<SettingsView>();
+
+
             })
             .Build();
     }
@@ -34,8 +53,8 @@ public partial class App : Application
     {
         var mainWindow = host!.Services.GetRequiredService<MainWindow>();
         var navigationstor = host!.Services.GetRequiredService<NavigationStore>();
-        var datetimeservice = host!.Services.GetRequiredService<DateTimeService>();
-        navigationstor.CurrentViewModel = new HomeViewModel(navigationstor, datetimeservice!);
+        navigationstor.CurrentViewModel = host!.Services.GetRequiredService<HomeWindowViewModel>();
+
 
         await host!.StartAsync();
         mainWindow.Show();

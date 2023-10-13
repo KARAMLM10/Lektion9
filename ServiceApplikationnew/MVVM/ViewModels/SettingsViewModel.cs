@@ -1,31 +1,45 @@
 ﻿
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Microsoft.Extensions.DependencyInjection;
 using ServiceApplikationnew.MVVM.Core;
 using ServiceApplikationnew.Services;
+using System;
 using System.Windows.Input;
 
 namespace ServiceApplikationnew.MVVM.ViewModels;
 
-public class SettingsViewModel : ObservalbeObject
+public partial class SettingsViewModel : ObservableObject
 {
     private readonly NavigationStore _navigationStore;
     private readonly DateTimeService _dateTimeService;
+    private readonly IServiceProvider _serviceProvider;
 
-    public SettingsViewModel(NavigationStore navigationStore, DateTimeService dateTimeService)
+    public SettingsViewModel(NavigationStore navigationStore, DateTimeService dateTimeService, IServiceProvider serviceProvider)
     {
         _navigationStore = navigationStore;
         _dateTimeService = dateTimeService;
+        _serviceProvider = serviceProvider;
     }
 
+
+    [ObservableProperty]
+    string? title = "Settings";
+
+
+
     // Navigation 
-    public ICommand NavigatToHomeCommand =>
-        new RelayCommand(() => _navigationStore.CurrentViewModel = new HomeViewModel(_navigationStore, _dateTimeService));
-    public ICommand CloseApplikationCommand =>
-        new RelayCommand(() => ApplikationService.CloseApplikation());
+    [RelayCommand]
+    public void NavigateToHome()
+    {
 
+        _navigationStore.CurrentViewModel = _serviceProvider.GetRequiredService<HomeWindowViewModel>();
+    }
 
-    private string? _title = "Settings";
-    public string? Title { get => _title; set => SetValue(ref _title, value); }
-
-
+    [RelayCommand]
+    public void CloseApplikation()
+    {
+        ApplikationService.CloseApplikation();
+    }
 
 }

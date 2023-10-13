@@ -58,6 +58,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+    <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.42.0" />
+    <PackageReference Include="Microsoft.Azure.Devices.Shared" Version="1.30.3" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
@@ -68,6 +71,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="MVVM\Controls\DevicesListControle.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
     <Page Update="Resources\FontDictionary.xaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Page>

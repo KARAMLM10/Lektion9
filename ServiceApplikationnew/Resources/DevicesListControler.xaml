@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:models="clr-namespace:ServiceApplikationnew.MVVM.Models"
+                      xmlns:controls="clr-namespace:ServiceApplikationnew.MVVM.Controls"
+                      xmlns:views="clr-namespace:ServiceApplikationnew.MVVM.Views"
+                      xmlns:viewmodels="clr-namespace:ServiceApplikationnew.MVVM.ViewModels"
+                    >
+
+    <Style x:Key="ListBoxStyle" TargetType="ListBox">
+        <Setter Property="Background" Value="#cccccc" />
+        <Setter Property="Opacity" Value="0.82" />
+        <!-- Andra egenskaper om så önskas -->
+        
+    </Style>
+
+</ResourceDictionary>

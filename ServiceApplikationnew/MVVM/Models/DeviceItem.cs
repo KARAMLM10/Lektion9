@@ -14,7 +14,7 @@ public class DeviceItem
     {
         return (Devicetype?.ToLower()) switch
         {
-            "light" => "\uf0eb",
+            "lampa" => "\uf0eb",
             "fan" => "\ue004",
             _ => "\uf2db"
         };
